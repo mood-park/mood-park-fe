@@ -170,8 +170,6 @@ export default class HomePage extends Component {
 					</div>
 					<div>
 						<br />
-						LOADING:
-						<br />
 						{this.state.isLoading ? (
 							<Spinner />
 						) : (

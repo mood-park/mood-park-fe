@@ -7,6 +7,9 @@ import Box from '@mui/material/Box';
 function Spinner(props) {
 	return (
 		<>
+			<br />
+			LOADING:
+			<br />
 			<Box sx={{ position: 'relative', display: 'inline-flex' }}>
 				<CircularProgress variant='determinate' {...props} />
 				<Box
