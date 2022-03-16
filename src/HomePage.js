@@ -11,7 +11,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { Grid } from '@mui/material';
+import { Grid, Tooltip } from '@mui/material';
 import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
 import { removeFavorite } from './Utils.js';
@@ -210,24 +210,26 @@ export default class HomePage extends Component {
 										</CardActionArea>
 										{this.props.token && (
 											<CardActions>
-												{isFavorite(park, this.state.favorites) ? (
-													<IconButton
-														size='large'
-														color='error'
-														aria-label='add to favorites'
-														onClick={() => this.handleRemove(park.parkCode)}
-													>
-														<FavoriteIcon />
-													</IconButton>
-												) : (
-													<IconButton
-														size='large'
-														aria-label='add to favorites'
-														onClick={() => this.handleFavorite(park)}
-													>
-														<FavoriteIcon />
-													</IconButton>
-												)}
+												<Tooltip title='Add/Remove Favorites' placement='right'>
+													{isFavorite(park, this.state.favorites) ? (
+														<IconButton
+															size='large'
+															color='error'
+															aria-label='add to favorites'
+															onClick={() => this.handleRemove(park.parkCode)}
+														>
+															{/* <FavoriteIcon /> */}
+														</IconButton>
+													) : (
+														<IconButton
+															size='large'
+															aria-label='add to favorites'
+															onClick={() => this.handleFavorite(park)}
+														>
+															{/* <FavoriteIcon /> */}
+														</IconButton>
+													)}
+												</Tooltip>
 											</CardActions>
 										)}
 									</Card>

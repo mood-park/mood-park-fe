@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 // import Typography from '@mui/material/Typography';
 // import IconButton from '@mui/material/IconButton';
-// import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function BasicMenu() {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -32,7 +32,7 @@ export default function BasicMenu() {
 						onClick={handleClick}
 						color='inherit'
 					>
-						MENU
+						<MenuIcon />
 					</Button>
 					<Menu
 						id='basic-menu'
@@ -48,12 +48,13 @@ export default function BasicMenu() {
 								Home
 							</Link>
 						</MenuItem>
+
 						<MenuItem onClick={handleClose}>
 							<Link href='favorites' underline='none'>
 								Favorites
 							</Link>
 						</MenuItem>
-						{}
+
 						<MenuItem onClick={handleClose}>
 							<Link href='sign-up' underline='none'>
 								Sign Up
