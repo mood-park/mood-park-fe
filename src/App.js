@@ -4,7 +4,6 @@ import HomePage from './HomePage.js';
 import Menu from './Menu.js';
 import DetailPage2 from './DetailPage2.js';
 import './App.css';
-import Navigation from './Navigation.js';
 import Favorites from './Favorites.js';
 import LogIn from './LogIn.js';
 import SignUp from './SignUp.js';
@@ -14,6 +13,7 @@ import Menu2 from './Menu2.js';
 import AboutUs from './AboutUs.js';
 import { Redirect } from 'react-router-dom';
 import Menu3 from './Menu3.js';
+import DetailPage from './DetailPage.js';
 
 const TOKEN_KEY = 'TOKEN';
 
@@ -25,11 +25,13 @@ export default function App() {
 
 	const tokenToLocalStorage = (token) => {
 		localStorage.setItem(TOKEN_KEY, token);
+		//this.setState({token: token})
 		setToken(token);
 	};
 
 	const logout = () => {
 		localStorage.clear();
+		//this.setState({token: ''})
 		setToken('');
 	};
 	return (
@@ -49,7 +51,7 @@ export default function App() {
 						path='/park/:parkCode'
 						exact
 						render={(routerProps) => (
-							<DetailPage2 token={token} {...routerProps} />
+							<DetailPage token={token} {...routerProps} />
 						)}
 					/>
 					<Route

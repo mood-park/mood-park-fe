@@ -4,52 +4,66 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, createFilterOptions, Divider } from '@mui/material';
+import {
+	CardActionArea,
+	createFilterOptions,
+	Divider,
+	Box,
+	Image,
+} from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
+import lake from './images/lake.jpeg';
 
 export default function AboutUs() {
+	const url = './images/lake.jpeg';
+
 	return (
 		<>
-			<h1 sx={{ justifyContent: 'center' }}>TEAM PARKS</h1>
-
-			<Stack
-				direction={{ xs: 'column', sm: 'row' }}
-				spacing={{ xs: 1, sm: 2, md: 4 }}
-				sx={{ flexWrap: 'wrap' }}
-				justifyContent='center'
-				alignItems='center'
+			<Box
+				sz={{
+					backgroundImage: url,
+				}}
 			>
-				{creators.map((creator) => (
-					<Card
-						sx={{
-							maxWidth: 345,
-							minWidth: 345,
-							minHeight: 450,
-						}}
-					>
-						<CardActionArea>
-							<CardMedia
-								component='img'
-								height='280'
-								image={creator.image}
-								alt={creator.name}
-								alt='green iguana'
-							/>
-							<CardContent>
-								<Typography gutterBottom variant='h5' component='div'>
-									{creator.name}
-								</Typography>
-								<Typography variant='body2' color='text.secondary'>
-									{creator.bio}
-									<br />
-									{creator.park}
-								</Typography>
-							</CardContent>
-						</CardActionArea>
-					</Card>
-				))}
-			</Stack>
+				<h1 style={{ textAlign: 'center', margin: '5' }}>TEAM PARKS</h1>
+
+				<Stack
+					direction={{ xs: 'column', sm: 'row' }}
+					// spacing={{ xs: 1, sm: 0, md: 4 }}
+					gap={2}
+					sx={{ flexWrap: 'wrap' }}
+					justifyContent='center'
+					alignItems='center'
+				>
+					{creators.map((creator) => (
+						<Card
+							sx={{
+								maxWidth: 345,
+								minWidth: 345,
+								minHeight: 525,
+							}}
+						>
+							<CardActionArea>
+								<CardMedia
+									component='img'
+									height='280'
+									image={creator.image}
+									alt={creator.name}
+								/>
+								<CardContent>
+									<Typography gutterBottom variant='h5' component='div'>
+										{creator.name}
+									</Typography>
+									<Typography variant='body2' color='text.secondary'>
+										<p>{creator.bio}</p>
+										<p>{creator.park}</p>
+									</Typography>
+								</CardContent>
+							</CardActionArea>
+						</Card>
+					))}
+				</Stack>
+			</Box>
 		</>
 	);
 }

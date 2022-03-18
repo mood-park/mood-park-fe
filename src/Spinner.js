@@ -50,7 +50,7 @@ export default function CircularStatic() {
 			setProgress((prevProgress) =>
 				prevProgress >= 100 ? 0 : prevProgress + 10
 			);
-		}, 500);
+		}, 800);
 		return () => {
 			clearInterval(timer);
 		};
