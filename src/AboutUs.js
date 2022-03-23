@@ -4,25 +4,18 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {
-	CardActionArea,
-	createFilterOptions,
-	Divider,
-	Box,
-	Image,
-} from '@mui/material';
+import { CardActionArea, Box } from '@mui/material';
 import Stack from '@mui/material/Stack';
-import Grid from '@mui/material/Grid';
 import lake from './images/lake.jpeg';
 
 export default function AboutUs() {
-	const url = './images/lake.jpeg';
-
 	return (
 		<>
 			<Box
-				sz={{
-					backgroundImage: url,
+				style={{
+					backgroundImage: `url(${lake})`,
+					backgroundSize: 'cover',
+					height: '100vh',
 				}}
 			>
 				<h1 style={{ textAlign: 'center', margin: '5' }}>TEAM PARKS</h1>
